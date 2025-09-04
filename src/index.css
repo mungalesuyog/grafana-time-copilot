@@ -2,41 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Grafana-inspired design system - Dark theme with professional monitoring interface
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Grafana dark theme colors */
+    --background: 214 13% 11%;
+    --foreground: 214 20% 91%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 214 15% 13%;
+    --card-foreground: 214 20% 91%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 214 15% 15%;
+    --popover-foreground: 214 20% 91%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 204 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 214 13% 18%;
+    --secondary-foreground: 214 20% 91%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 214 13% 16%;
+    --muted-foreground: 214 15% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 214 13% 18%;
+    --accent-foreground: 214 20% 91%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 13% 25%;
+    --input: 214 13% 18%;
+    --ring: 204 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
+
+    /* Grafana specific colors */
+    --grafana-bg-primary: 214 13% 11%;
+    --grafana-bg-secondary: 214 15% 13%;
+    --grafana-bg-tertiary: 214 13% 18%;
+    --grafana-text-primary: 214 20% 91%;
+    --grafana-text-secondary: 214 15% 65%;
+    --grafana-border: 214 13% 25%;
+    --grafana-hover: 214 13% 20%;
+    --grafana-active: 204 100% 50%;
+    --grafana-green: 142 76% 36%;
+    --grafana-orange: 35 91% 62%;
+    --grafana-blue: 204 100% 50%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -102,4 +116,95 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* React DatePicker Grafana theme customization */
+.react-datepicker {
+  background-color: hsl(var(--grafana-bg-secondary)) !important;
+  border: 1px solid hsl(var(--grafana-border)) !important;
+  border-radius: 4px !important;
+  color: hsl(var(--grafana-text-primary)) !important;
+  font-family: inherit !important;
+}
+
+.react-datepicker__header {
+  background-color: hsl(var(--grafana-bg-tertiary)) !important;
+  border-bottom: 1px solid hsl(var(--grafana-border)) !important;
+  color: hsl(var(--grafana-text-primary)) !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  color: hsl(var(--grafana-text-primary)) !important;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: hsl(var(--grafana-text-primary)) !important;
+}
+
+.react-datepicker__day:hover,
+.react-datepicker__month-text:hover,
+.react-datepicker__quarter-text:hover,
+.react-datepicker__year-text:hover {
+  background-color: hsl(var(--grafana-hover)) !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range {
+  background-color: hsl(var(--grafana-active)) !important;
+  color: white !important;
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid hsl(var(--grafana-border)) !important;
+}
+
+.react-datepicker__time {
+  background: hsl(var(--grafana-bg-secondary)) !important;
+}
+
+.react-datepicker__time-box {
+  border-radius: 0 0 4px 0 !important;
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: hsl(var(--grafana-hover)) !important;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: hsl(var(--grafana-active)) !important;
+  color: white !important;
+}
+
+.react-datepicker__navigation {
+  border: none !important;
+}
+
+.react-datepicker__navigation--previous {
+  border-right-color: hsl(var(--grafana-text-primary)) !important;
+}
+
+.react-datepicker__navigation--next {
+  border-left-color: hsl(var(--grafana-text-primary)) !important;
+}
+
+.react-datepicker__triangle {
+  border-bottom-color: hsl(var(--grafana-bg-secondary)) !important;
+}
+
+.react-datepicker__triangle::before {
+  border-bottom-color: hsl(var(--grafana-border)) !important;
 }

@@ -52,6 +52,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				grafana: {
+					'bg-primary': 'hsl(var(--grafana-bg-primary))',
+					'bg-secondary': 'hsl(var(--grafana-bg-secondary))',
+					'bg-tertiary': 'hsl(var(--grafana-bg-tertiary))',
+					'text-primary': 'hsl(var(--grafana-text-primary))',
+					'text-secondary': 'hsl(var(--grafana-text-secondary))',
+					'border': 'hsl(var(--grafana-border))',
+					'hover': 'hsl(var(--grafana-hover))',
+					'active': 'hsl(var(--grafana-active))',
+					'green': 'hsl(var(--grafana-green))',
+					'orange': 'hsl(var(--grafana-orange))',
+					'blue': 'hsl(var(--grafana-blue))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
